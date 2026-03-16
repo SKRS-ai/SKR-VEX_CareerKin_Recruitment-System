@@ -3,93 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CastAiStars | The Digital Backlot</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>SKR-VEX | CareerKin Recruitment Exchange</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; }
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', system-ui, sans-serif; margin: 0; background: var(--bg-light); color: #172b4d; }
         
-        /* Nebula Pulse Animation */
-        @keyframes nebula-pulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); }
-            50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.4)); }
+        /* Professional Header */
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .logo { font-weight: 800; font-size: 1.6rem; color: var(--kin-blue); letter-spacing: -1px; }
+        .logo span { color: #6b778c; font-weight: 400; }
+
+        header { text-align: center; padding: 80px 20px; background: white; border-bottom: 1px solid #ebecf0; }
+        h1 { font-size: 3.2rem; margin: 0; color: var(--dark-vault); letter-spacing: -2px; }
+        .hero-p { font-size: 1.25rem; color: #505f79; max-width: 650px; margin: 20px auto; line-height: 1.6; }
+
+        /* The Grid System */
+        .grid-label { padding: 40px 5% 10px; font-weight: bold; text-transform: uppercase; color: #6b778c; letter-spacing: 1px; font-size: 0.9rem; }
+        
+        .boutique-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+            gap: 20px; 
+            padding: 20px 5%; 
         }
-        .nebula-star {
-            animation: nebula-pulse 4s ease-in-out infinite;
+
+        .prof-card { 
+            background: white; 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: var(--dark-vault); 
+            text-align: center;
+            border: 1px solid #dfe1e6;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #ffffff, #00e5ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .prof-card:hover { 
+            border-color: var(--kin-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(9, 30, 66, 0.08);
         }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+
+        .prof-card h3 { margin: 0; font-size: 1.1rem; }
+        .prof-card span { font-size: 0.8rem; color: var(--vetted-green); font-weight: bold; margin-top: 8px; text-transform: uppercase; }
+
+        /* Action Section */
+        .cta-bar { background: var(--dark-vault); color: white; padding: 60px 5%; text-align: center; margin-top: 60px; }
+        .btn { padding: 16px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; margin: 10px; transition: 0.2s; }
+        .btn-green { background: var(--vetted-green); color: white; }
+        .btn-blue { background: var(--kin-blue); color: white; }
+
+        footer { text-align: center; padding: 40px; color: #6b778c; font-size: 0.9rem; }
     </style>
 </head>
-<body class="text-white overflow-x-hidden">
+<body>
 
-    <nav class="fixed w-full z-50 glass-panel">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-cyan-500 rounded flex items-center justify-center nebula-star">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="black"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                </div>
-                <span class="text-2xl font-black tracking-tighter uppercase">Cast<span class="text-cyan-400">AI</span>Stars</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-gray-400">
-                <a href="#" class="hover:text-cyan-400 transition">The Backlot</a>
-                <a href="#" class="hover:text-cyan-400 transition">For Directors</a>
-                <a href="#" class="hover:text-cyan-400 transition">For Creators</a>
-            </div>
-            <button class="bg-white text-black px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-cyan-400 transition">Beta Access</button>
+    <nav>
+        <div class="logo">SKR-VEX <span>CareerKin</span></div>
+        <div>
+            <a href="login.html" style="text-decoration: none; color: #505f79; font-weight: 600; margin-right: 20px;">Log In</a>
+            <a href="register.html" class="btn-blue" style="padding: 10px 20px; border-radius: 5px; text-decoration: none; color: white;">Join the Registry</a>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center pt-20">
-        <div class="absolute inset-0 z-0 opacity-30">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-600 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900 rounded-full mix-blend-screen filter blur-[120px] animate-pulse"></div>
+    <header>
+        <h1>The Professional Registry</h1>
+        <p class="hero-p">A secure community where talent is verified upfront. Shop for "Kin" by profession and hire with 100% confidence in their credentials.</p>
+        <div style="margin-top: 30px;">
+            <a href="register.html" class="btn btn-green">I Want To Be Vetted</a>
+            <a href="recruit.html" class="btn btn-blue">I Am Looking To Hire</a>
         </div>
+    </header>
 
-        <div class="relative z-10 text-center max-w-4xl px-6">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-none">
-                THE FUTURE OF FAME IS <span class="text-gradient">SYNTHETIC.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-10 font-light max-w-2xl mx-auto">
-                Welcome to the Headquarters. Cast verified virtual stars for your next production. Powered by <span class="text-white font-bold">Solomon Kin Records</span>.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button class="bg-cyan-500 text-black px-10 py-4 rounded-lg font-black text-lg uppercase tracking-widest hover:bg-cyan-400 shadow-[0_0_20px_rgba(0,229,255,0.4)] transition">Enter the Office</button>
-                <button class="border border-gray-700 hover:border-white px-10 py-4 rounded-lg font-black text-lg uppercase tracking-widest transition">Register a Star</button>
-            </div>
-        </div>
+    <div class="grid-label">Boutique Categories (A-Z)</div>
+    <main class="boutique-grid" id="profGrid">
+        </main>
+
+    <section class="cta-bar">
+        <h2>Zero-Lag Recruitment</h2>
+        <p>Why wait 2 weeks for a background check? Our members are Tiered by verified data.</p>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-900">
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">Verified Continuity</h3>
-                <p class="text-gray-400">Our stars maintain visual consistency across every scene. No "uncanny valley," just professional assets.</p>
-            </div>
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">The Digital Soul</h3>
-                <p class="text-gray-400">Every talent registry includes a unique, consistent Voice ID curated by Solomon Kin Records.</p>
-            </div>
-            <div class="glass-panel p-8 rounded-2xl">
-                <h3 class="text-cyan-400 font-bold mb-4 uppercase tracking-widest">Smart Licensing</h3>
-                <p class="text-gray-400">Automated casting contracts that protect creators and empower directors in one click.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-gray-900 text-center text-gray-600">
-        <p class="text-xs uppercase tracking-[0.5em]">&copy; 2026 Solomon Kin Records LLC. All Rights Reserved.</p>
+    <footer>
+        &copy; 2026 SKR-VEX CareerKin System | Secure Kinship Registry
     </footer>
 
+    <script>
+        // Relational Data: The Profession List
+        const kins = [
+            "Accountants", "Architects", "Analysts", "Attorneys",
+            "Biologists", "Baristas", "Builders", "Biomedical Techs",
+            "Carpenters", "Chefs", "Civil Engineers", "Copywriters",
+            "Data Scientists", "Drivers (CDL)", "Dental Hygienists", "Designers",
+            "Electricians", "Editors", "Economics Experts", "Event Planners",
+            "Financial Advisors", "Foremen", "Fitness Trainers", "Flight Attendants",
+            "Graphic Designers", "General Contractors", "Geologists", "Gov Agents",
+            "Healthcare Workers", "HR Managers", "Hospitality Staff", "Horticulturists",
+            "IT Specialists", "Insurance Agents", "Interior Designers", "Investigators",
+            "Janitorial Managers", "Journalists", "Jewelers", "Junior Devs",
+            "Kinesiologists", "Kitchen Designers", "Knowledge Officers", "Key Accounts",
+            "Logistics Coordinators", "Lawyers", "Landscape Architects", "Lab Techs",
+            "Marketing Directors", "Mechanical Engineers", "Medical Assistants", "Machinists",
+            "Nurses", "Network Architects", "Nutritionists", "Notaries",
+            "Operations Leads", "Optometrists", "Office Admins", "Online Educators",
+            "Project Managers", "Plumbers", "Pharmacists", "Photographers",
+            "Quality Analysts", "Quantity Surveyors", "Quarry Managers", "QuickBooks Pros",
+            "Real Estate Agents", "Recruiters", "Radiologists", "Research Scientists",
+            "Software Engineers", "Security Consultants", "Sales Executives", "Social Workers",
+            "Technicians", "Truck Drivers", "Teachers", "Translators",
+            "UI/UX Designers", "Upholsterers", "Underwriters", "Urban Planners",
+            "Veterinarians", "Video Editors", "Virtual Assistants", "Vocal Coaches",
+            "Warehouse Leads", "Web Developers", "Writers", "Welders",
+            "X-Ray Techs", "Yacht Crew", "Yoga Instructors", "Zoologists"
+        ];
+
+        const grid = document.getElementById('profGrid');
+
+        kins.forEach(title => {
+            const card = document.createElement('a');
+            card.href = `category.html?type=${title.toLowerCase()}`;
+            card.className = 'prof-card';
+            card.innerHTML = `<h3>${title}</h3><span>Vetted Ready</span>`;
+            grid.appendChild(card);
+        });
+    </script>
 </body>
 </html>
