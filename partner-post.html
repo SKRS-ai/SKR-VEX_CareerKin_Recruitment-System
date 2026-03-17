@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job | CareerKin Partner Portal</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+            --partner-purple: #6554c0;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; }
+        nav { background: var(--partner-purple); padding: 15px 5%; display: flex; align-items: center; color: white; }
+        .logo { font-weight: 800; color: white; text-decoration: none; font-size: 1.2rem; }
+
+        .container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { color: var(--dark-vault); border-bottom: 2px solid var(--partner-purple); padding-bottom: 10px; }
+        
+        .form-section { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-width { grid-column: span 2; }
+
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #505f79; font-size: 0.9rem; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #dfe1e6; border-radius: 6px; box-sizing: border-box; }
+        
+        .premium-tag { background: #eae6ff; color: var(--partner-purple); padding: 15px; border-radius: 8px; margin-bottom: 30px; font-weight: 500; }
+        
+        .submit-btn { 
+            grid-column: span 2; 
+            background: var(--partner-purple); 
+            color: white; 
+            padding: 18px; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>Partner Portal</span></a>
+    </nav>
+
+    <div class="container">
+        <div class="premium-tag">✨ Internal Listing: Your job will be pinned to the top of the Boutique Professional categories.</div>
+        <h1>Post a Classified Job Ad</h1>
+        <p>List your opening directly on the CareerKin Secure Exchange.</p>
+
+        <form id="jobForm" class="form-section">
+            <div class="full-width">
+                <label>Job Title</label>
+                <input type="text" placeholder="e.g. Senior Project Manager" required>
+            </div>
+
+            <div>
+                <label>Category (Kinship)</label>
+                <select id="kinSelect">
+                    </select>
+            </div>
+
+            <div>
+                <label>Employment Type</label>
+                <select>
+                    <option>Full-Time</option>
+                    <option>Contract (Verified)</option>
+                    <option>Temporary</option>
+                </select>
+            </div>
+
+            <div class="full-width">
+                <label>Location (City, State or 'Remote')</label>
+                <input type="text" placeholder="e.g. Sony HQ - San Mateo, CA" required>
+            </div>
+
+            <div class="full-width">
+                <label>Job Description & Requirements</label>
+                <textarea rows="6" placeholder="Describe the role and the specific tier of verification required..."></textarea>
+            </div>
+
+            <div>
+                <label>Required Minimum Tier</label>
+                <select>
+                    <option>Tier 1 (ID Verified)</option>
+                    <option>Tier 2 (ID + Passport Verified)</option>
+                    <option>Tier 3 (Full Employment History Verified)</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Salary Range (Optional)</label>
+                <input type="text" placeholder="e.g. $90k - $120k">
+            </div>
+
+            <button type="submit" class="submit-btn">Publish to CareerKin Exchange</button>
+        </form>
+    </div>
+
+    <script>
+        // Use the same list to keep data relational
+        const kins = ["Accountants", "Architects", "Analysts", "Attorneys", "Builders", "Carpenters", "Chefs", "Data Scientists", "Drivers (CDL)", "Electricians", "Engineers", "Healthcare Workers", "IT Specialists", "Nurses", "Plumbers", "Software Engineers", "Teachers", "Welders"];
+        const select = document.getElementById('kinSelect');
+        kins.sort().forEach(k => {
+            const o = document.createElement('option');
+            o.value = k.toLowerCase();
+            o.innerText = k;
+            select.appendChild(o);
+        });
+
+        document.getElementById('jobForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert("Success! Your classified ad has been posted. It will now appear at the top of the results for your selected category.");
+            window.location.href = "index.html";
+        };
+    </script>
+</body>
+</html>
