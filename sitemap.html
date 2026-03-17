@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | SKR-VEX Global Index</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; color: var(--dark-vault); }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; }
+
+        .container { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+        
+        .map-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        
+        .map-section h3 { 
+            color: var(--kin-blue); 
+            border-bottom: 2px solid var(--kin-blue); 
+            padding-bottom: 10px; 
+            margin-bottom: 20px; 
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .map-list { list-style: none; padding: 0; }
+        .map-list li { margin-bottom: 12px; }
+        .map-list a { 
+            text-decoration: none; 
+            color: var(--dark-vault); 
+            font-size: 0.95rem; 
+            transition: 0.2s; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .map-list a:hover { color: var(--kin-blue); padding-left: 5px; }
+        .map-list a::before { content: '→'; color: #ccc; }
+
+        .meta-footer { margin-top: 80px; padding: 40px; border-top: 1px solid #dfe1e6; text-align: center; font-size: 0.8rem; color: #6b778c; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>Index</span></a>
+        <a href="dashboard.html" style="color: var(--kin-blue); font-weight: bold; text-decoration: none;">My Vault</a>
+    </nav>
+
+    <div class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Network Architecture</h1>
+        <p style="color: #6b778c; margin-bottom: 50px;">Complete directory of the SKR-VEX Verified Kinship ecosystem.</p>
+
+        <div class="map-grid">
+            <div class="map-section">
+                <h3>The Market</h3>
+                <ul class="map-list">
+                    <li><a href="index.html">Boutique Grid</a></li>
+                    <li><a href="registry.html">Public Registry</a></li>
+                    <li><a href="jobs.html">Global Job Feed</a></li>
+                    <li><a href="success.html">Success Stories</a></li>
+                    <li><a href="community.html">Kin-Forum</a></li>
+                </ul>
+            </div>
+
+            <div class="map-section">
+                <h3>Identity Vault</h3>
+                <ul class="map-list">
+                    <li><a href="register.html">Intake Portal</a></li>
+                    <li><a href="dashboard.html">Member Dashboard</a></li>
+                    <li><a href="profile.html">Verified Profile</a></li>
+                    <li><a href="certificate.html">Tier 3 Certificate</a></li>
+                    <li><a href="mobile-app.html">Mobile App Beta</a></li>
+                </ul>
+            </div>
+
+            <div class="map-section">
+                <h3>Business Tools</h3>
+                <ul class="map-list">
+                    <li><a href="recruit.html">Recruiter Pipeline</a></li>
+                    <li><a href="partner-post.html">Partner Classifieds</a></li>
+                    <li><a href="enterprise.html">Enterprise Solutions</a></li>
+                    <li><a href="demo.html">Request a Demo</a></li>
+                    <li><a href="messages.html">Secure Messaging</a></li>
+                </ul>
+            </div>
+
+            <div class="map-section">
+                <h3>The Protocol</h3>
+                <ul class="map-list">
+                    <li><a href="about.html">System Philosophy</a></li>
+                    <li><a href="privacy.html">Privacy Shield</a></li>
+                    <li><a href="terms.html">Terms of Protocol</a></li>
+                    <li><a href="status.html">System Status</a></li>
+                    <li><a href="help.html">Help Center / FAQ</a></li>
+                    <li><a href="admin-queue.html">Admin Command</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer class="meta-footer">
+        SKR-VEX GLOBAL INDEX • ALL 23 NODES ACTIVE • MAR-2026
+    </footer>
+
+</body>
+</html>
