@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Registry | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; padding: 0; }
+        nav { background: white; padding: 15px 5%; display: flex; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        .container { max-width: 600px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h1 { color: var(--dark-vault); margin-bottom: 10px; }
+        p.subtitle { color: #6b778c; margin-bottom: 30px; }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--dark-vault); }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #dfe1e6; border-radius: 6px; box-sizing: border-box; font-size: 1rem; }
+        
+        .verification-box { 
+            background: #e3fcef; 
+            border: 2px dashed var(--vetted-green); 
+            padding: 20px; 
+            border-radius: 8px; 
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .btn-submit { 
+            background: var(--kin-blue); 
+            color: white; 
+            width: 100%; 
+            padding: 16px; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover { background: #0747a6; }
+        
+        .tier-badge {
+            display: inline-block;
+            background: var(--vetted-green);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+    </nav>
+
+    <div class="container">
+        <div class="tier-badge">TIER 1 ENROLLMENT</div>
+        <h1>Create Your Digital ID</h1>
+        <p class="subtitle">Complete your verified profile to appear in the professional boutique.</p>
+
+        <form id="registrationForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label>Primary Profession (Kinship)</label>
+                <select id="professionSelect" required>
+                    <option value="">Select your category...</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label>Last Employer (Verified Proof)</label>
+                <input type="text" placeholder="e.g. Sony Interactive Entertainment" required>
+            </div>
+
+            <div class="form-group">
+                <label>Employer Coordinates/Location</label>
+                <input type="text" placeholder="City, State or Latitude/Longitude">
+            </div>
+
+            <div class="verification-box">
+                <label style="color: var(--vetted-green);">🛡️ Secure Identity Upload</label>
+                <p style="font-size: 0.85rem; color: #172b4d;">Upload a clear photo of your Driver's License or State ID.<br>We only verify the <strong>Full Name</strong> and <strong>Expiration Date</strong>.</p>
+                <input type="file" accept="image/*" style="border:none; background:none;">
+            </div>
+
+            <div class="form-group">
+                <label>Optional: Passport Verification?</label>
+                <select>
+                    <option value="no">No - Stay Tier 1</option>
+                    <option value="yes">Yes - Move to Tier 2 (Premium Recruiters)</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Generate My Verified Profile</button>
+        </form>
+    </div>
+
+    <script>
+        // Reuse the same professional list for consistency
+        const kins = [
+            "Accountants", "Architects", "Analysts", "Attorneys", "Biologists", "Baristas", "Builders", 
+            "Carpenters", "Chefs", "Data Scientists", "Drivers (CDL)", "Electricians", "Engineers", 
+            "Graphic Designers", "Healthcare Workers", "IT Specialists", "Nurses", "Plumbers", 
+            "Software Engineers", "Teachers", "Welders" // Truncated for example
+        ];
+
+        const select = document.getElementById('professionSelect');
+        kins.sort().forEach(title => {
+            const opt = document.createElement('option');
+            opt.value = title.toLowerCase();
+            opt.innerText = title;
+            select.appendChild(opt);
+        });
+
+        document.getElementById('registrationForm').onsubmit = function(e) {
+            e.preventDefault();
+            alert("SKR-VEX System: Your data has been encrypted and sent to the verification vault. You will appear in the registry once ID check is complete.");
+            window.location.href = "index.html";
+        };
+    </script>
+</body>
+</html>
