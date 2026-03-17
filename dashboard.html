@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vault Dashboard | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+            --alert-gold: #ffab00;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; color: var(--dark-vault); }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; }
+
+        .container { padding: 40px 5%; max-width: 1200px; margin: auto; display: grid; grid-template-columns: 1fr 3fr; gap: 30px; }
+
+        /* Sidebar Profile */
+        .user-card { background: white; padding: 30px; border-radius: 12px; text-align: center; height: fit-content; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .avatar { width: 80px; height: 80px; background: #ebecf0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 3px solid var(--vetted-green); }
+        .tier-status { background: #e3fcef; color: var(--vetted-green); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; }
+
+        /* Main Dashboard */
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+        .stat-box { background: white; padding: 20px; border-radius: 12px; border-left: 5px solid var(--kin-blue); }
+        .stat-box h4 { margin: 0; color: #6b778c; font-size: 0.8rem; text-transform: uppercase; }
+        .stat-box .num { font-size: 1.8rem; font-weight: 800; margin-top: 5px; }
+
+        .section-title { font-size: 1.2rem; font-weight: 700; margin: 30px 0 15px; display: flex; justify-content: space-between; align-items: center; }
+        
+        .activity-feed { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .activity-item { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .activity-item:last-child { border: none; }
+        .activity-info strong { color: var(--kin-blue); }
+        
+        .badge-proof { background: #deebff; color: var(--kin-blue); padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+        .btn-action { background: var(--kin-blue); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+        <div>
+            <a href="messages.html" style="margin-right:20px; text-decoration:none; color:var(--dark-vault);">Messages (2)</a>
+            <a href="index.html" style="color:red; text-decoration:none; font-weight:600;">Sign Out</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="user-card">
+            <div class="avatar">MH</div>
+            <h3>Marcus Holloway</h3>
+            <div class="tier-status">TIER 3 VERIFIED</div>
+            <p style="font-size: 0.85rem; color: #6b778c; margin-top: 15px;">Your identity vault is 100% anchored. You are appearing at the top of the Software Engineer grid.</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <a href="profile.html" class="btn-action" style="display:block;">View My Public Proof</a>
+        </div>
+
+        <div class="main-content">
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <h4>Profile Views</h4>
+                    <div class="num">142</div>
+                </div>
+                <div class="stat-box" style="border-color: var(--vetted-green);">
+                    <h4>Proof Unlocks</h4>
+                    <div class="num">8</div>
+                </div>
+                <div class="stat-box" style="border-color: var(--alert-gold);">
+                    <h4>Active Inquiries</h4>
+                    <div class="num">3</div>
+                </div>
+            </div>
+
+            <div class="section-title">
+                Recent Activity
+                <span style="font-size: 0.8rem; font-weight: 400; color: #6b778c;">Last 7 Days</span>
+            </div>
+            
+            <div class="activity-feed">
+                <div class="activity-item">
+                    <div class="activity-info">
+                        <strong>Sony Interactive</strong> viewed your <span class="badge-proof">GEOGRAPHIC PROOF</span>
+                        <div style="font-size: 0.8rem; color: #6b778c; margin-top: 4px;">2 hours ago • Verified coordinate match.</div>
+                    </div>
+                    <a href="messages.html" class="btn-action">Message HR</a>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-info">
+                        <strong>Google Cloud</strong> requested access to your <span class="badge-proof">PASSPORT SCAN</span>
+                        <div style="font-size: 0.8rem; color: #6b778c; margin-top: 4px;">Yesterday • Tier 2 background check.</div>
+                    </div>
+                    <button class="btn-action" style="background: var(--vetted-green);" onclick="alert('Access Granted to Google Cloud HR.')">Grant Access</button>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-info">
+                        <strong>FedEx Global</strong> added you to their <strong>"Top Kin"</strong> list.
+                        <div style="font-size: 0.8rem; color: #6b778c; margin-top: 4px;">2 days ago • Logistics Architect Role.</div>
+                    </div>
+                    <span style="color: #6b778c; font-size: 0.85rem; font-style: italic;">Watching</span>
+                </div>
+            </div>
+
+            <div class="section-title">Security & Maintenance</div>
+            <div class="activity-feed" style="background: #fff9db; border: 1px solid #ffe58f;">
+                <div class="activity-item">
+                    <div class="activity-info">
+                        <strong>Vault Audit:</strong> Your Driver's License expires in 120 days.
+                        <div style="font-size: 0.8rem; color: #6b778c; margin-top: 4px;">Keep your Tier 3 status by updating early.</div>
+                    </div>
+                    <a href="register.html" class="btn-action" style="background: var(--dark-vault);">Update ID</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
