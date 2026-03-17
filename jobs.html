@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Job Feed | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; }
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        .container { padding: 40px 5%; max-width: 1000px; margin: auto; }
+        .job-card { background: white; padding: 25px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #dfe1e6; transition: 0.2s; }
+        .job-card:hover { border-color: var(--kin-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        
+        .job-title { font-size: 1.4rem; color: var(--dark-vault); margin: 0; }
+        .job-company { color: var(--kin-blue); font-weight: 600; margin: 5px 0; }
+        .job-meta { font-size: 0.9rem; color: #6b778c; margin-bottom: 15px; }
+        
+        .vetted-tag { background: #e3fcef; color: var(--vetted-green); padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; display: inline-block; margin-bottom: 10px; }
+        
+        .apply-btn { background: var(--kin-blue); color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; }
+        
+        #loading { text-align: center; font-style: italic; color: #6b778c; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+        <div style="color: #6b778c; font-size: 0.9rem;">Live Feed: Connected</div>
+    </nav>
+
+    <div class="container">
+        <h1 id="pageTitle">Finding Live Opportunities...</h1>
+        <p id="loading">Scanning global networks for verified matches...</p>
+
+        <div id="jobList">
+            </div>
+    </div>
+
+    <script>
+        // Getting the profession from the URL (e.g., jobs.html?type=carpenter)
+        const urlParams = new URLSearchParams(window.location.search);
+        const profession = urlParams.get('type') || 'Professional';
+        document.getElementById('pageTitle').innerText = `Live ${profession} Openings`;
+
+        // To make this fully functional, you would sign up for a free API key at Adzuna.
+        // For now, this script simulates the "Live Feed" logic.
+        async function fetchJobs() {
+            setTimeout(() => {
+                const jobList = document.getElementById('jobList');
+                document.getElementById('loading').style.display = 'none';
+
+                const mockJobs = [
+                    { title: `Senior ${profession}`, company: "Global Tech Corp", loc: "Remote / New York", salary: "$120k - $150k" },
+                    { title: `${profession} Lead`, company: "Innovation Hub", loc: "Austin, TX", salary: "Competitive" },
+                    { title: `Junior ${profession}`, company: "Startup Kin", loc: "Remote", salary: "$70k - $90k" }
+                ];
+
+                mockJobs.forEach(job => {
+                    const card = document.createElement('div');
+                    card.className = 'job-card';
+                    card.innerHTML = `
+                        <div class="vetted-tag">✓ SKR-VEX VERIFIED LISTING</div>
+                        <h2 class="job-title">${job.title}</h2>
+                        <div class="job-company">${job.company}</div>
+                        <div class="job-meta">📍 ${job.loc} | 💰 ${job.salary}</div>
+                        <p>This role is compatible with the CareerKin Tiered Verification system. Vetted candidates receive priority review.</p>
+                        <a href="#" class="apply-btn">Apply via CareerKin</a>
+                    `;
+                    jobList.appendChild(card);
+                });
+            }, 1000);
+        }
+
+        fetchJobs();
+    </script>
+</body>
+</html>
