@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Access | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --gold-premium: #ffab00;
+        }
+
+        body { font-family: 'Inter', sans-serif; margin: 0; background: #f4f5f7; color: var(--dark-vault); }
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        header { text-align: center; padding: 60px 20px; background: var(--dark-vault); color: white; }
+        
+        .pricing-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            padding: 50px 5%; 
+            flex-wrap: wrap; 
+        }
+
+        .price-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            width: 320px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            border: 2px solid transparent;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .featured { border-color: var(--gold-premium); transform: scale(1.05); }
+        .price-card h3 { margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .price { font-size: 2.5rem; font-weight: 800; margin: 20px 0; }
+        .price span { font-size: 1rem; color: #6b778c; }
+
+        ul { text-align: left; padding: 0; list-style: none; margin: 30px 0; }
+        li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        li::before { content: '✓'; color: var(--vetted-green); font-weight: bold; }
+
+        .btn-upgrade { 
+            display: block; 
+            padding: 15px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            background: var(--kin-blue); 
+            color: white; 
+            transition: 0.2s;
+        }
+        .btn-gold { background: var(--gold-premium); color: var(--dark-vault); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+    </nav>
+
+    <header>
+        <h1>Maximize Your Kinship</h1>
+        <p>Unlock deep-verification tools and priority placement in the Exchange.</p>
+    </header>
+
+    <div class="pricing-container">
+        <div class="price-card">
+            <h3>Tier 3 Seeker</h3>
+            <div class="price">$19<span>/one-time</span></div>
+            <p>For the professional who wants to lead the boutique.</p>
+            <ul>
+                <li>Full Employment Verification</li>
+                <li>Sony-Style GPS Proof Tag</li>
+                <li>Verified Document Vault (Passport/GED)</li>
+                <li>Priority "Top of Grid" Placement</li>
+            </ul>
+            <a href="#" class="btn-upgrade">Upgrade My Profile</a>
+        </div>
+
+        <div class="price-card featured">
+            <div style="background: var(--gold-premium); color: var(--dark-vault); padding: 5px; font-size: 0.7rem; font-weight: bold; border-radius: 5px; margin-bottom: 10px;">MOST POPULAR</div>
+            <h3>Premium Recruiter</h3>
+            <div class="price">$299<span>/mo</span></div>
+            <p>Full access to the Secure Kinship Registry.</p>
+            <ul>
+                <li>Unlimited "Proof" Unlocks</li>
+                <li>Direct Secure Messaging</li>
+                <li>Advanced Geographic Filtering</li>
+                <li>Download Verified Dossiers</li>
+            </ul>
+            <a href="#" class="btn-upgrade btn-gold">Start Recruiting</a>
+        </div>
+
+        <div class="price-card">
+            <h3>Corporate Partner</h3>
+            <div class="price">Contact<span>Us</span></div>
+            <p>Enterprise-grade recruitment OS integration.</p>
+            <ul>
+                <li>Custom Internal Portal</li>
+                <li>Bulk Verification API</li>
+                <li>White-labeled Registry View</li>
+                <li>Dedicated Account Manager</li>
+            </ul>
+            <a href="about.html" class="btn-upgrade" style="background: var(--dark-vault);">Enquire Now</a>
+        </div>
+    </div>
+
+    
+
+</body>
+</html>
