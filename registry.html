@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Registry | SKR-VEX Public Directory</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; }
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        .container { padding: 40px 5%; max-width: 1100px; margin: auto; }
+        
+        /* Stats Bar */
+        .registry-stats { display: flex; gap: 20px; margin-bottom: 30px; }
+        .stat-chip { background: white; padding: 10px 20px; border-radius: 50px; border: 1px solid #dfe1e6; font-size: 0.85rem; font-weight: 600; color: #505f79; }
+
+        /* Registry List */
+        .registry-card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 12px; 
+            display: grid; 
+            grid-template-columns: 2fr 1.5fr 1fr 1fr; 
+            align-items: center;
+            border: 1px solid #dfe1e6;
+            transition: 0.2s;
+        }
+        .registry-card:hover { border-color: var(--kin-blue); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+        .member-name { font-weight: 700; color: var(--dark-vault); }
+        .member-kinship { color: #6b778c; font-size: 0.9rem; }
+        
+        .tier-pill { 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: bold; 
+            text-align: center;
+            display: inline-block;
+        }
+        .tier-1 { background: #deebff; color: var(--kin-blue); }
+        .tier-2 { background: #fff0b3; color: #856404; }
+        .tier-3 { background: #e3fcef; color: var(--vetted-green); }
+
+        .view-link { color: var(--kin-blue); text-decoration: none; font-size: 0.9rem; font-weight: 600; text-align: right; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+        <div>
+            <a href="register.html" style="text-decoration: none; color: var(--kin-blue); font-weight: 600;">Get Vetted</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Global Professional Registry</h1>
+        <p style="color: #6b778c; margin-bottom: 30px;">All members listed below have anchored their identity via the SKR-VEX Protocol.</p>
+
+        <div class="registry-stats">
+            <div class="stat-chip">🔵 1,240 Total Members</div>
+            <div class="stat-chip">🟢 892 Tier 3 Verified</div>
+            <div class="stat-chip">🏢 45 Active Kinships</div>
+        </div>
+
+        <div style="padding: 10px 20px; color: #6b778c; font-size: 0.8rem; font-weight: bold; display: grid; grid-template-columns: 2fr 1.5fr 1fr 1fr;">
+            <span>MEMBER NAME</span>
+            <span>KINSHIP CATEGORY</span>
+            <span>VERIFICATION</span>
+            <span style="text-align: right;">PROFILE</span>
+        </div>
+
+        <div id="registryList">
+            <div class="registry-card">
+                <span class="member-name">Marcus Holloway</span>
+                <span class="member-kinship">Software Engineer</span>
+                <div><span class="tier-pill tier-3">TIER 3 (FULL PROOF)</span></div>
+                <a href="profile.html" class="view-link">Access Vault →</a>
+            </div>
+
+            <div class="registry-card">
+                <span class="member-name">Sarah Jenkins</span>
+                <span class="member-kinship">Logistics Coordinator</span>
+                <div><span class="tier-pill tier-2">TIER 2 (CREDENTIALS)</span></div>
+                <a href="profile.html" class="view-link">Access Vault →</a>
+            </div>
+
+            <div class="registry-card">
+                <span class="member-name">David Chen</span>
+                <span class="member-kinship">Project Manager</span>
+                <div><span class="tier-pill tier-1">TIER 1 (ID ONLY)</span></div>
+                <a href="profile.html" class="view-link">Access Vault →</a>
+            </div>
+            
+            <div class="registry-card">
+                <span class="member-name">Elena Rodriguez</span>
+                <span class="member-kinship">Architect</span>
+                <div><span class="tier-pill tier-3">TIER 3 (FULL PROOF)</span></div>
+                <a href="profile.html" class="view-link">Access Vault →</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
