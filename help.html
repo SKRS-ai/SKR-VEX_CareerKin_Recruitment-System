@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: white; margin: 0; color: var(--dark-vault); }
+        nav { background: white; padding: 15px 5%; display: flex; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        .help-hero { background: var(--kin-blue); color: white; padding: 60px 10%; text-align: center; }
+        .search-box { max-width: 600px; margin: 20px auto; position: relative; }
+        .search-box input { width: 100%; padding: 15px 25px; border-radius: 30px; border: none; font-size: 1.1rem; }
+
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        
+        .faq-section h2 { border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; margin-bottom: 20px; color: var(--kin-blue); }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item h4 { margin: 0 0 8px 0; color: var(--dark-vault); font-size: 1.1rem; }
+        .faq-item p { margin: 0; color: #505f79; font-size: 0.95rem; line-height: 1.5; }
+
+        .support-card { background: var(--bg-light); padding: 30px; border-radius: 12px; text-align: center; }
+        .btn-ticket { display: inline-block; background: var(--dark-vault); color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; margin-top: 15px; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>CareerKin</span></a>
+    </nav>
+
+    <header class="help-hero">
+        <h1>How can we help you today?</h1>
+        <div class="search-box">
+            <input type="text" placeholder="Search for 'Sony verification', 'Tier 3', or 'ID Security'...">
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="faq-section">
+            <h2>For the Kin (Seekers)</h2>
+            <div class="faq-item">
+                <h4>How do I achieve Tier 3 status?</h4>
+                <p>Tier 3 requires a valid government ID plus proof of employment at a recognized firm (e.g., Sony, Microsoft). Once your GPS coordinates match the firm's records, our admin queue will grant the badge.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Who can see my Driver's License?</h4>
+                <p>Only the SKR-VEX verification AI and authorized human moderators. Recruiters only see a "Verified" badge unless you explicitly unlock the document for them in a chat.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is the background check free?</h4>
+                <p>Tier 1 (Identity) is free. Professional verification (Tier 3) may require a one-time processing fee for deeper audits.</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>For Recruiters</h2>
+            <div class="faq-item">
+                <h4>What are "Sony-Style" coordinates?</h4>
+                <p>We use geographic anchoring to prove a candidate actually worked on-site. The coordinates represent the verified physical location of the employer during the candidate's tenure.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can I export candidate proof dossiers?</h4>
+                <p>Premium recruiters can download a PDF "Trust Report" for any candidate who has unlocked their profile for them.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How do I post a Classified Ad?</h4>
+                <p>Visit the Partner Portal to list your role. Premium ads are pinned to the top of the Boutique Grid for 30 days.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div style="max-width: 600px; margin: 0 auto 60px auto;" class="support-card">
+        <h3>Still have questions?</h3>
+        <p>Our verification team is standing by to help you anchor your professional identity.</p>
+        <a href="mailto:support@skr-vex-careerkin.com" class="btn-ticket">Open a Support Ticket</a>
+    </div>
+
+</body>
+</html>
