@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinship Messaging | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; display: flex; height: 100vh; }
+        
+        /* Sidebar for Conversations */
+        .msg-sidebar { width: 300px; background: white; border-right: 1px solid #dfe1e6; display: flex; flex-direction: column; }
+        .sidebar-header { padding: 20px; border-bottom: 1px solid #eee; font-weight: bold; color: var(--dark-vault); font-size: 1.2rem; }
+        
+        .convo-list { overflow-y: auto; flex-grow: 1; }
+        .convo-item { padding: 15px 20px; border-bottom: 1px solid #f4f5f7; cursor: pointer; transition: 0.2s; }
+        .convo-item:hover { background: #f0f2f5; }
+        .convo-item.active { background: #e3f2fd; border-left: 4px solid var(--kin-blue); }
+        .convo-name { font-weight: 600; font-size: 0.95rem; display: block; }
+        .convo-preview { font-size: 0.8rem; color: #6b778c; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Main Chat Area */
+        .chat-main { flex-grow: 1; display: flex; flex-direction: column; background: white; }
+        .chat-header { padding: 15px 25px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .chat-user-info { display: flex; align-items: center; gap: 10px; }
+        .vetted-icon { color: var(--vetted-green); font-size: 0.8rem; font-weight: bold; }
+
+        .message-pane { flex-grow: 1; padding: 25px; overflow-y: auto; background: #fafbfc; display: flex; flex-direction: column; gap: 15px; }
+        .message { max-width: 70%; padding: 12px 18px; border-radius: 18px; font-size: 0.95rem; line-height: 1.4; }
+        .msg-received { background: #ebecf0; align-self: flex-start; border-bottom-left-radius: 2px; }
+        .msg-sent { background: var(--kin-blue); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+
+        .input-area { padding: 20px; border-top: 1px solid #eee; display: flex; gap: 10px; }
+        input { flex-grow: 1; padding: 12px; border: 1px solid #dfe1e6; border-radius: 25px; outline: none; }
+        .btn-send { background: var(--kin-blue); color: white; border: none; padding: 0 20px; border-radius: 25px; cursor: pointer; font-weight: bold; }
+
+        /* Verification Request Tag */
+        .request-tag { background: #fff0b3; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; border: 1px solid #ffe58f; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <div class="msg-sidebar">
+        <div class="sidebar-header">Kinship Chats</div>
+        <div class="convo-list">
+            <div class="convo-item active">
+                <span class="convo-name">Marcus Holloway (Sony Proof)</span>
+                <span class="convo-preview">I've attached the supervisor contact...</span>
+            </div>
+            <div class="convo-item">
+                <span class="convo-name">HR Manager @ Sony</span>
+                <span class="convo-preview">Verified: Employee record #8821 matches.</span>
+            </div>
+            <div class="convo-item">
+                <span class="convo-name">Sarah Jenkins</span>
+                <span class="convo-preview">Thanks for viewing my credentials!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-main">
+        <div class="chat-header">
+            <div class="chat-user-info">
+                <strong>Marcus Holloway</strong>
+                <span class="vetted-icon">✓ TIER 3</span>
+            </div>
+            <a href="profile.html" style="font-size: 0.85rem; color: var(--kin-blue); text-decoration: none; font-weight: 600;">View Full Proof</a>
+        </div>
+
+        <div class="message-pane" id="chatPane">
+            <div class="message msg-received">
+                Hello! I saw you were looking at my Sony verification coordinates. Would you like to speak about my role there?
+            </div>
+            <div class="message msg-sent">
+                Yes, Marcus. The verification looks solid. I noticed you mentioned a clean background record—can you share that document?
+            </div>
+            <div class="request-tag">
+                🔑 <strong>System Note:</strong> Recruiter has requested access to [Background Record]. <br>
+                <button style="margin-top:5px; cursor:pointer;" onclick="alert('Access Granted. Document shared in Secure Vault.')">Grant Access</button>
+            </div>
+            <div class="message msg-received">
+                Access granted! You should see the scan in the Identity Vault now.
+            </div>
+        </div>
+
+        <form class="input-area" onsubmit="event.preventDefault(); alert('Message sent through SKR-VEX Secure Channel');">
+            <input type="text" placeholder="Type a secure message...">
+            <button type="submit" class="btn-send">Send</button>
+        </form>
+    </div>
+
+</body>
+</html>
