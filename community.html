@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinship Forum | SKR-VEX Community</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+            --forum-border: #dfe1e6;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; color: var(--dark-vault); }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid var(--forum-border); }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; }
+
+        .forum-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
+
+        /* Sidebar Categories */
+        .forum-sidebar { background: white; border-radius: 8px; padding: 20px; height: fit-content; border: 1px solid var(--forum-border); }
+        .sidebar-item { padding: 10px; border-radius: 4px; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
+        .sidebar-item:hover { background: #f0f2f5; color: var(--kin-blue); }
+        .active-cat { background: var(--kin-blue); color: white !important; font-weight: bold; }
+
+        /* Thread List */
+        .thread-card { background: white; padding: 25px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--forum-border); display: flex; gap: 20px; }
+        .vote-box { text-align: center; color: #6b778c; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 40px; }
+        .thread-content { flex-grow: 1; }
+        .thread-title { font-size: 1.2rem; font-weight: 700; color: var(--kin-blue); text-decoration: none; display: block; margin-bottom: 5px; }
+        .thread-meta { font-size: 0.8rem; color: #6b778c; }
+        .badge-v { background: #e3fcef; color: #00875a; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.7rem; }
+
+        .btn-post { background: var(--kin-blue); color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>Community</span></a>
+        <div><a href="dashboard.html" style="text-decoration:none; color:var(--kin-blue); font-weight:600;">Back to Dashboard</a></div>
+    </nav>
+
+    <div class="forum-container">
+        <div class="forum-sidebar">
+            <h4 style="margin-top:0;">Kinships</h4>
+            <div class="sidebar-item active-cat">All Threads</div>
+            <div class="sidebar-item">Engineering Kin</div>
+            <div class="sidebar-item">Architects Kin</div>
+            <div class="sidebar-item">Healthcare Kin</div>
+            <div class="sidebar-item">Logistics Kin</div>
+            <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
+            <div class="sidebar-item">Tier 3 Lounge 🔒</div>
+            <div class="sidebar-item">Protocol Updates</div>
+        </div>
+
+        <div class="main-forum">
+            <a href="#" class="btn-post" onclick="alert('Thread creation is locked to Tier 2+ members.')">Start New Thread</a>
+
+            <div class="thread-card">
+                <div class="vote-box"><span>▲</span><strong>42</strong><span>▼</span></div>
+                <div class="thread-content">
+                    <a href="#" class="thread-title">How Sony verifies your specific floor coordinates...</a>
+                    <div class="thread-meta">
+                        Posted by <strong>MarcusH</strong> <span class="badge-v">TIER 3</span> • 3 hours ago in <em>Engineering Kin</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thread-card">
+                <div class="vote-box"><span>▲</span><strong>18</strong><span>▼</span></div>
+                <div class="thread-content">
+                    <a href="#" class="thread-title">GED vs. High School Diploma: Does Tier 2 accept both?</a>
+                    <div class="thread-meta">
+                        Posted by <strong>SarahJ</strong> <span class="badge-v">TIER 2</span> • 5 hours ago in <em>Protocol Updates</em>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thread-card">
+                <div class="vote-box"><span>▲</span><strong>96</strong><span>▼</span></div>
+                <div class="thread-content">
+                    <a href="#" class="thread-title">Which recruiters are currently the most active in Tier 3?</a>
+                    <div class="thread-meta">
+                        Posted by <strong>DavidC</strong> <span class="badge-v">TIER 3</span> • 1 day ago in <em>All Threads</em>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+</body>
+</html>
