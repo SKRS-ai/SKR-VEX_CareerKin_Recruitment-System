@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status | SKR-VEX Network</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #36b37e;
+            --alert-gold: #ffab00;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; color: var(--dark-vault); }
+        
+        nav { background: white; padding: 15px 5%; display: flex; align-items: center; border-bottom: 1px solid #ddd; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; font-size: 1.2rem; }
+
+        .status-header { padding: 60px 10%; background: white; border-bottom: 1px solid #dfe1e6; text-align: center; }
+        .status-indicator { display: inline-flex; align-items: center; gap: 10px; background: #e3fcef; color: var(--vetted-green); padding: 10px 25px; border-radius: 50px; font-weight: bold; margin-bottom: 20px; }
+        .pulse { width: 10px; height: 10px; background: var(--vetted-green); border-radius: 50%; box-shadow: 0 0 0 0 rgba(54, 179, 126, 0.7); animation: pulse 2s infinite; }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(54, 179, 126, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(54, 179, 126, 0); } 100% { box-shadow: 0 0 0 0 rgba(54, 179, 126, 0); } }
+
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .service-row { background: white; padding: 20px; border-radius: 8px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #dfe1e6; }
+        .service-name { font-weight: 600; }
+        .service-status { color: var(--vetted-green); font-size: 0.9rem; font-weight: bold; }
+
+        .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+        .metric-card { background: var(--dark-vault); color: white; padding: 25px; border-radius: 12px; text-align: center; }
+        .metric-card .label { font-size: 0.75rem; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; }
+        .metric-card .value { font-size: 1.8rem; font-weight: 800; margin-top: 10px; color: var(--alert-gold); }
+
+        .incident-log { margin-top: 60px; }
+        .log-entry { border-left: 2px solid #dfe1e6; padding-left: 20px; margin-bottom: 30px; position: relative; }
+        .log-entry::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: #dfe1e6; border-radius: 50%; }
+        .log-date { font-size: 0.8rem; color: #6b778c; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav><a href="index.html" class="logo">SKR-VEX <span>Status</span></a></nav>
+
+    <header class="status-header">
+        <div class="status-indicator">
+            <div class="pulse"></div>
+            ALL SYSTEMS OPERATIONAL
+        </div>
+        <h1>Real-Time Transparency</h1>
+        <p>Live health monitoring of the Secure Kinship Registry ecosystem.</p>
+    </header>
+
+    <div class="container">
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="label">Avg. Verification Time</div>
+                <div class="value">4.2 Hrs</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Proof Success Rate</div>
+                <div class="value">99.98%</div>
+            </div>
+            <div class="metric-card">
+                <div class="label">Uptime (30d)</div>
+                <div class="value">100%</div>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-name">Identity Vault Encryption</span>
+            <span class="service-status">OPERATIONAL</span>
+        </div>
+        <div class="service-row">
+            <span class="service-name">Sony-Style Coordinate API</span>
+            <span class="service-status">OPERATIONAL</span>
+        </div>
+        <div class="service-row">
+            <span class="service-name">Boutique Grid Search Engine</span>
+            <span class="service-status">OPERATIONAL</span>
+        </div>
+        <div class="service-row">
+            <span class="service-name">Partner Messaging Hub</span>
+            <span class="service-status">OPERATIONAL</span>
+        </div>
+
+        <div class="incident-log">
+            <h3>Past Incident History</h3>
+            <div class="log-entry">
+                <div class="log-date">March 12, 2026</div>
+                <strong>Scheduled Maintenance: Registry Index Update</strong>
+                <p style="font-size: 0.9rem; color: #505f79;">Performance optimization completed on the professional kinship categorization engine. Downtime: 0 minutes.</p>
+            </div>
+            <div class="log-entry">
+                <div class="log-date">February 28, 2026</div>
+                <strong>Sony-Style Protocol Upgrade</strong>
+                <p style="font-size: 0.9rem; color: #505f79;">Enhanced geographic anchoring for Tier 3 candidates. No service interruption.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
