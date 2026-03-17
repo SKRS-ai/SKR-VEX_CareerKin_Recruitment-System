@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Vault | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --dark-vault: #172b4d;
+            --vetted-green: #36b37e;
+            --bg-light: #f4f5f7;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: white; margin: 0; color: var(--dark-vault); overflow-x: hidden; }
+        
+        nav { background: white; padding: 15px 5%; display: flex; justify-content: space-between; border-bottom: 1px solid #eee; }
+        .logo { font-weight: 800; color: var(--kin-blue); text-decoration: none; }
+
+        .app-hero { display: grid; grid-template-columns: 1fr 1fr; padding: 80px 10%; align-items: center; gap: 50px; background: linear-gradient(180deg, #fff 0%, var(--bg-light) 100%); }
+        .app-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .app-text p { font-size: 1.2rem; color: #505f79; margin-bottom: 30px; }
+
+        .mockup-container { background: #172b4d; height: 500px; width: 280px; border-radius: 40px; border: 8px solid #333; position: relative; box-shadow: 0 50px 100px rgba(0,0,0,0.2); margin: auto; }
+        .mockup-screen { background: var(--kin-blue); height: 100%; width: 100%; border-radius: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px; box-sizing: border-box; }
+
+        .features-mobile { padding: 80px 10%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .m-card { text-align: center; }
+        .m-card .icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+
+        .waitlist-box { background: var(--kin-blue); color: white; padding: 60px; text-align: center; border-radius: 20px; margin: 40px 10%; }
+        .waitlist-form { display: flex; gap: 10px; justify-content: center; margin-top: 20px; }
+        .waitlist-form input { padding: 15px; border-radius: 8px; border: none; width: 300px; }
+        .btn-wait { background: var(--vetted-green); color: white; padding: 15px 30px; border-radius: 8px; border: none; font-weight: bold; cursor: pointer; }
+
+        @media (max-width: 900px) { .app-hero { grid-template-columns: 1fr; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>Mobile</span></a>
+        <a href="dashboard.html" style="color: var(--kin-blue); font-weight: bold; text-decoration: none;">Dashboard</a>
+    </nav>
+
+    <header class="app-hero">
+        <div class="app-text">
+            <h1>Your Identity. <br><span style="color: var(--kin-blue);">In Your Pocket.</span></h1>
+            <p>The SKR-VEX Mobile Vault allows for instant QR-code verification at job sites, biometric document unlocking, and real-time Kinship alerts.</p>
+            <div style="display: flex; gap: 20px;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" width="150" alt="App Store">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" width="150" alt="Play Store">
+            </div>
+        </div>
+        <div class="mockup-container">
+            <div class="mockup-screen">
+                <div style="font-size: 0.8rem; opacity: 0.8;">SKR-VEX OS v2.0</div>
+                <div style="font-size: 2.5rem; margin: 20px 0;">🛡️</div>
+                <div style="font-weight: bold;">VAULT SECURE</div>
+                <div style="font-size: 0.7rem; margin-top: 10px;">GPS: 37.5606° N <br> STATUS: TIER 3</div>
+                <div style="margin-top: 40px; background: white; color: var(--kin-blue); padding: 10px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">TAP TO VERIFY</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="features-mobile">
+        <div class="m-card">
+            <span class="icon">📱</span>
+            <h3>One-Tap Proof</h3>
+            <p>Show your Tier 3 status to on-site managers with a secure, time-sensitive QR code.</p>
+        </div>
+        <div class="m-card">
+            <span class="icon">🔔</span>
+            <h3>Instant Pings</h3>
+            <p>Get notified the second a recruiter from the Boutique Grid requests access to your Vault.</p>
+        </div>
+        <div class="m-card">
+            <span class="icon">🧬</span>
+            <h3>Biometric Anchor</h3>
+            <p>Use FaceID or Fingerprint to unlock sensitive "Sony-style" employment coordinates.</p>
+        </div>
+    </div>
+
+    
+
+    <div class="waitlist-box">
+        <h2>Join the Mobile Beta</h2>
+        <p>Be the first to anchor your identity on the go. Early beta members get a free Tier 3 audit.</p>
+        <form class="waitlist-form" onsubmit="event.preventDefault(); alert('You are on the list! Keep an eye on your vault for the beta invite.');">
+            <input type="email" placeholder="Enter your Kin-Email" required>
+            <button type="submit" class="btn-wait">Get Early Access</button>
+        </form>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #6b778c; font-size: 0.8rem;">
+        SKR-VEX MOBILE LABS • SAN MATEO, CA • 2026
+    </footer>
+
+</body>
+</html>
