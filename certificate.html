@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Certificate | SKR-VEX Protocol</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #36b37e;
+            --dark-vault: #172b4d;
+            --cert-gold: #c5a059;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: #515e72; margin: 0; padding: 50px 20px; display: flex; justify-content: center; }
+        
+        /* The Certificate Paper */
+        .certificate { 
+            background: white; 
+            width: 100%; 
+            max-width: 800px; 
+            padding: 60px; 
+            position: relative; 
+            border: 20px solid var(--dark-vault); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            background-image: radial-gradient(#f9f9f9 2px, transparent 2px);
+            background-size: 30px 30px;
+        }
+
+        .cert-border-inner { border: 2px solid var(--cert-gold); padding: 40px; height: 100%; position: relative; }
+
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 1rem; letter-spacing: 5px; color: var(--cert-gold); text-transform: uppercase; margin: 0; }
+        .logo-seal { font-size: 3rem; margin: 20px 0; display: block; }
+
+        .recipient { text-align: center; margin: 40px 0; }
+        .recipient h2 { font-size: 3rem; font-family: 'serif'; margin: 10px 0; color: var(--dark-vault); border-bottom: 1px solid #eee; display: inline-block; padding: 0 40px; }
+        
+        .claim { text-align: center; font-style: italic; color: #505f79; margin-bottom: 40px; }
+
+        /* The Vetting Data Grid */
+        .vetting-data { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 2px solid #eee; padding-top: 30px; margin-top: 30px; }
+        .data-item { font-size: 0.8rem; }
+        .data-label { font-weight: bold; color: var(--cert-gold); text-transform: uppercase; display: block; }
+        .data-value { font-family: monospace; font-size: 0.95rem; color: var(--dark-vault); }
+
+        /* Footer Seals */
+        .footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; }
+        .signature { border-top: 1px solid var(--dark-vault); width: 200px; text-align: center; padding-top: 5px; font-family: 'Dancing Script', cursive; font-size: 1.2rem; }
+        .qr-code { width: 80px; height: 80px; background: #eee; border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; font-size: 0.5rem; text-align: center; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .certificate { box-shadow: none; border: 10px solid var(--dark-vault); }
+            .btn-print { display: none; }
+        }
+
+        .btn-print { position: fixed; top: 20px; right: 20px; background: var(--vetted-green); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; }
+    </style>
+</head>
+<body>
+
+    <button class="btn-print" onclick="window.print()">Download / Print PDF</button>
+
+    <div class="certificate">
+        <div class="cert-border-inner">
+            <div class="header">
+                <h1>Secure Kinship Registry</h1>
+                <span class="logo-seal">🛡️</span>
+                <p>CERTIFICATE OF TIER 3 VERIFICATION</p>
+            </div>
+
+            <div class="recipient">
+                <p>This is to certify that</p>
+                <h2>Marcus Holloway</h2>
+                <p>has successfully anchored their professional identity within the</p>
+                <p><strong>Software Engineering Kinship</strong></p>
+            </div>
+
+            <div class="claim">
+                "Verified via SKR-VEX Protocol 1.04: Identity, Credentials, and Physical Employment History."
+            </div>
+
+            <div class="vetting-data">
+                <div class="data-item">
+                    <span class="data-label">Identity ID</span>
+                    <span class="data-value">VEX-9982-CA-USA</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Verified Coordinate (Sony)</span>
+                    <span class="data-value">37.5606° N, 122.3255° W</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Passport Status</span>
+                    <span class="data-value">Anchored & Encrypted</span>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">Registry Hash</span>
+                    <span class="data-value">0x7F2B...E891</span>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div>
+                    <div class="signature">Director of Registry</div>
+                    <p style="font-size: 0.7rem; color: #6b778c;">SKR-VEX Systems Architecture</p>
+                </div>
+                <div class="qr-code">
+                    [QR CODE]<br>SCAN TO<br>VALIDATE
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
