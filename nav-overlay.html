@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Navigation | SKR-VEX</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --dark-vault: #172b4d;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--kin-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,82,204,0.4);
+            cursor: pointer;
+            z-index: 9999;
+            font-size: 1.5rem;
+            border: none;
+        }
+
+        /* The Overlay */
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-vault);
+            z-index: 9998;
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-overlay.active { display: flex; }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 15px 0;
+            transition: 0.2s;
+            opacity: 0.8;
+        }
+
+        .nav-link:hover { opacity: 1; transform: scale(1.1); color: #36b37e; }
+
+        .nav-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6b778c;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="mobile-menu-btn" onclick="toggleNav()">☰</button>
+
+    <div class="nav-overlay" id="navOverlay">
+        <div class="nav-subtitle">SKR-VEX Navigation</div>
+        
+        <a href="index.html" class="nav-link">The Boutique</a>
+        <a href="registry.html" class="nav-link">Public Registry</a>
+        <a href="register.html" class="nav-link">My Identity Vault</a>
+        <a href="recruit.html" class="nav-link">Recruiter Pipeline</a>
+        <a href="messages.html" class="nav-link">Secure Chat</a>
+        <a href="jobs.html" class="nav-link">Live Job Feed</a>
+        
+        <div class="nav-subtitle">System Management</div>
+        <a href="admin-queue.html" class="nav-link" style="font-size: 1.2rem;">Admin Command</a>
+        <a href="premium.html" class="nav-link" style="font-size: 1.2rem; color: #ffab00;">Upgrade to Tier 3</a>
+
+        <button onclick="toggleNav()" style="background:none; border: 1px solid white; color: white; padding: 10px 20px; border-radius: 20px; margin-top: 40px; cursor: pointer;">Close Menu</button>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('navOverlay');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        }
+    </script>
+
+</body>
+</html>
