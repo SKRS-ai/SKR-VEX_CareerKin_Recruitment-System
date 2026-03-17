@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard | SKR-VEX CareerKin</title>
+    <style>
+        :root {
+            --kin-blue: #0052cc;
+            --vetted-green: #00875a;
+            --dark-vault: #172b4d;
+            --bg-light: #f4f5f7;
+            --alert-gold: #ffab00;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg-light); margin: 0; }
+        
+        /* Dashboard Nav */
+        nav { background: var(--dark-vault); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white; }
+        .logo { font-weight: 800; color: white; text-decoration: none; font-size: 1.2rem; }
+        .tier-indicator { background: var(--alert-gold); color: var(--dark-vault); padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.8rem; }
+
+        .container { padding: 40px 5%; }
+        .search-bar { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: flex; gap: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        input { flex-grow: 1; padding: 12px; border: 1px solid #dfe1e6; border-radius: 6px; }
+
+        /* Candidate Table */
+        .candidate-table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        th { background: #ebecf0; text-align: left; padding: 15px; color: #6b778c; font-size: 0.85rem; text-transform: uppercase; }
+        td { padding: 20px 15px; border-bottom: 1px solid #eee; vertical-align: middle; }
+
+        /* Vetting Badges */
+        .badge { padding: 5px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; display: inline-block; }
+        .badge-id { background: #e3fcef; color: var(--vetted-green); border: 1px solid var(--vetted-green); }
+        .badge-work { background: #deebff; color: var(--kin-blue); border: 1px solid var(--kin-blue); }
+
+        /* The Clickable Verification Modal (Simulated) */
+        .verify-trigger { color: var(--kin-blue); cursor: pointer; text-decoration: underline; font-weight: 600; }
+        
+        .map-coord { font-family: monospace; font-size: 0.8rem; color: #6b778c; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SKR-VEX <span>Recruiter Portal</span></a>
+        <div class="tier-indicator">PREMIUM ACCESS: ACTIVE</div>
+    </nav>
+
+    <div class="container">
+        <h1>Vetted Talent Pipeline</h1>
+        <p>Accessing the Secure Kinship Registry. All candidates below have passed Tier 1 ID Verification.</p>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search by Kinship (e.g. Software Engineer, Welder, Accountant)...">
+            <button style="background: var(--kin-blue); color: white; border: none; padding: 0 25px; border-radius: 6px; cursor: pointer;">Filter</button>
+        </div>
+
+        <table class="candidate-table">
+            <thead>
+                <tr>
+                    <th>Candidate Name</th>
+                    <th>Profession</th>
+                    <th>Identity Status</th>
+                    <th>Verified Employer (Proof)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Marcus Holloway</strong></td>
+                    <td>Software Engineer</td>
+                    <td><span class="badge badge-id">✓ ID VERIFIED</span></td>
+                    <td>
+                        <span class="verify-trigger" onclick="alert('PROOF DATA:\nEmployer: Sony Interactive\nLocation: San Mateo, CA\nCoords: 37.5606° N, 122.3255° W\nVerified by: HR-Registry API')">Sony Interactive</span><br>
+                        <span class="map-coord">37.5606° N, 122.3255° W</span>
+                    </td>
+                    <td><button class="badge badge-work">View Digital Resume</button></td>
+                </tr>
+                <tr>
+                    <td><strong>Sarah Jenkins</strong></td>
+                    <td>Logistics Coordinator</td>
+                    <td><span class="badge badge-id">✓ ID VERIFIED</span></td>
+                    <td>
+                        <span class="verify-trigger" onclick="alert('DOCUMENT VIEW:\n[Driver\'s License Scan: ACTIVE]\n[Exp: 2029]\n[Verified via SKR-VEX Protocol]')">FedEx Global</span><br>
+                        <span class="map-coord">35.1495° N, 90.0490° W</span>
+                    </td>
+                    <td><button class="badge badge-work">View Digital Resume</button></td>
+                </tr>
+                <tr>
+                    <td><strong>David Chen</strong></td>
+                    <td>Project Manager</td>
+                    <td><span class="badge badge-id" style="background: #fff0b3; color: #856404; border-color: #ffe58f;">⌛ PENDING ID</span></td>
+                    <td>
+                        <span>Toyota Motors</span><br>
+                        <span class="map-coord">33.0198° N, 96.6989° W</span>
+                    </td>
+                    <td><button class="badge" style="background:#eee; color:#999;" disabled>Locked</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer style="text-align: center; padding: 40px; color: #6b778c;">
+        SKR-VEX Secure Recruitment Environment | Encryption Level: AES-256
+    </footer>
+
+</body>
+</html>
